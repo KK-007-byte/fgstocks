@@ -3,14 +3,18 @@
 
 # In[ ]:
 
-
-
-
-
+import yfinance as yf
+import seaborn as sns
+import ta
+import pandas as pd
+import plotly.graph_objects as go
+import plotly.figure_factory as ff
+import plotly.express as px
+import streamlit as st
 # In[ ]:
 
 
-import yfinance as yf
+
 
 tickers = ['AAPL', 'GOOGL', 'MSFT', 'AMZN', 'TSLA']
 data = yf.download(tickers, start='2018-01-01', end='2024-12-31')
@@ -26,7 +30,7 @@ returns = data.pct_change().dropna()
 # In[20]:
 
 
-import seaborn as sns
+
 sns.heatmap(returns.corr(), annot=True, cmap='coolwarm')
 
 
@@ -39,8 +43,7 @@ sns.heatmap(returns.corr(), annot=True, cmap='coolwarm')
 # In[22]:
 
 
-import ta
-import pandas as pd
+
 
 
 # In[23]:
@@ -103,13 +106,13 @@ def compute_indicators(ticker):
 # In[28]:
 
 
-import plotly.graph_objects as go
+
 
 
 # In[29]:
 
 
-import plotly.figure_factory as ff
+
 
 corr = returns.corr().round(2)
 
@@ -129,7 +132,7 @@ fig.show()
 # In[33]:
 
 
-import plotly.express as px
+
 returns_long = returns.reset_index().melt(var_name='Stock', value_name='Daily Return')
 
 fig = px.histogram(
@@ -168,11 +171,7 @@ from pypfopt.risk_models import CovarianceShrinkage
 # In[37]:
 
 
-import streamlit as st
-import yfinance as yf
-import pandas as pd
-import plotly.express as px
-import plotly.figure_factory as ff
+
 
 st.title("📊 Stock Return Analysis")
 
