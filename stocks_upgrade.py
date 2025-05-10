@@ -3,7 +3,7 @@
 
 # In[ ]:
 
-import yfinance as yf
+
 import seaborn as sns
 import ta
 import pandas as pd
