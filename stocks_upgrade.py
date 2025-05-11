@@ -1,18 +1,4 @@
 
-
-
-# In[34]:
-
-
-
-
-# In[35]:
-
-
-
-
-
-# In[36]:
 import seaborn as sns
 import ta
 import pandas as pd
